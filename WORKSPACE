@@ -6,16 +6,20 @@ http_archive(
     name = "com_google_absl",
     urls = ["https://github.com/abseil/abseil-cpp/archive/20200923.3.zip"],
     strip_prefix = "abseil-cpp-20200923.3",
+    sha256 = "6622893ab117501fc23268a2936e0d46ee6cb0319dcf2275e33a708cd9634ea6",
 )
 http_archive(
     name = "com_google_googletest",
     urls = ["https://github.com/google/googletest/archive/release-1.10.0.zip"],
     strip_prefix = "googletest-release-1.10.0",
+    sha256 = "94c634d499558a76fa649edb13721dce6e98fb1e7018dfaeba3cd7a083945e91",
 )
 git_repository(
     name = "com_github_gflags_gflags",
     remote = "https://github.com/gflags/gflags.git",
-    tag = "v2.2.2"
+    # tag = "v2.2.2"
+    commit = "e171aa2d15ed9eb17054558e0b3a6a413bb01067",
+    shallow_since = "1541971260 +0000",
 )
 http_archive(
     name = "com_github_google_glog",
