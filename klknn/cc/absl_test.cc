@@ -1,6 +1,7 @@
 // https://google.github.io/googletest/primer.html
 #include "gtest/gtest.h"
-#include "plog/Log.h"
+
+#include "klknn/cc/log.h"
 
 namespace klknn {
 namespace {
@@ -23,7 +24,7 @@ TEST_F(QueueTest, IsEmptyInitially) {
 
 
 TEST(HelloTest, GetGreet) {
-  LOG(plog::info) << "NOW TESTING!";
+  LOG_INFO << "NOW TESTING!";
   EXPECT_EQ(1 + 1, 2);
 }
 

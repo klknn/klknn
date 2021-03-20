@@ -1,3 +1,4 @@
+// Common base functions.
 #pragma once
 
 namespace klknn {

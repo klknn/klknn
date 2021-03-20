@@ -11,4 +11,5 @@
 !requirements.txt
 !BUILD
 !WORKSPACE
+!.bazelrc
 !.gitignore

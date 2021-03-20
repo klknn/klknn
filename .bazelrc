@@ -1,0 +1,2 @@
+build --copt=-Wall --copt=-Wextra --copt=-Werror --copt=-std=c++17
+test --test_output=all
