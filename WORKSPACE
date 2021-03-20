@@ -14,18 +14,19 @@ http_archive(
     strip_prefix = "googletest-release-1.10.0",
     sha256 = "94c634d499558a76fa649edb13721dce6e98fb1e7018dfaeba3cd7a083945e91",
 )
-git_repository(
-    name = "com_github_gflags_gflags",
-    remote = "https://github.com/gflags/gflags.git",
-    # tag = "v2.2.2"
-    commit = "e171aa2d15ed9eb17054558e0b3a6a413bb01067",
-    shallow_since = "1541971260 +0000",
-)
 http_archive(
-    name = "com_github_google_glog",
-    sha256 = "62efeb57ff70db9ea2129a16d0f908941e355d09d6d83c9f7b18557c0a7ab59e",
-    strip_prefix = "glog-d516278b1cd33cd148e8989aec488b6049a4ca0b",
-    urls = ["https://github.com/google/glog/archive/d516278b1cd33cd148e8989aec488b6049a4ca0b.zip"],
+    name = "com_github_plog",
+    strip_prefix = "plog-1.1.5",
+    urls = ["https://github.com/SergiusTheBest/plog/archive/refs/tags/1.1.5.zip"],
+    sha256 = "2e16efba6b4d94a77f5c0c1ca8624d707c80ca7dfe3c49c89662e1540febb448",
+    build_file_content = """
+cc_library(
+    name = "plog",
+    hdrs = glob(["include/**/*.h"]),
+    includes = ["include"],
+    visibility = ["//visibility:public"],
+)
+"""
 )
 
 # java deps

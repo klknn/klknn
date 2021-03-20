@@ -3,8 +3,9 @@ cc_library(
     hdrs = ["base.h"],
     srcs = ["base.cc"],
     deps = [
-        "@com_github_google_glog//:glog",
-        "@com_github_gflags_gflags//:gflags",
+        "@com_github_plog//:plog",
+        "@com_google_absl//absl/flags:flag",
+        "@com_google_absl//absl/flags:parse",
     ],
 )
 
@@ -14,7 +15,7 @@ cc_library(
     deps = [
         ":base",
         "@com_google_googletest//:gtest",
-        "@com_github_gflags_gflags//:gflags",
+        "@com_google_absl//absl/flags:flag",
     ]
 )
 
@@ -23,9 +24,10 @@ cc_binary(
     srcs = ["hello_world.cc"],
     deps = [
         ":base",
+        "@com_github_plog//:plog",
         "@com_google_absl//absl/strings",
-        "@com_github_google_glog//:glog",
-        "@com_github_gflags_gflags//:gflags",
+        "@com_google_absl//absl/flags:flag",
+        "@com_google_absl//absl/flags:parse",
     ],
 )
 
@@ -36,6 +38,6 @@ cc_test(
     deps = [
         ":gtest_main",
         "@com_google_googletest//:gtest",
-        "@com_github_google_glog//:glog",
+        "@com_github_plog//:plog",
     ],
 )
