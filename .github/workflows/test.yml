@@ -3,7 +3,7 @@ name: test
 jobs:
   checks:
     name: run
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@master
 
@@ -11,6 +11,12 @@ jobs:
       run: |
         sudo apt-get update -qq
         sudo apt-get install -qq -y g++ python3 python-is-python3 openjdk-14-jdk
+
+    - name: version check
+      run: |
+        g++ -v
+        javac -version
+        python --version
 
     - name: bazel test
       uses: ngalaiko/bazel-action/1.2.1@master
