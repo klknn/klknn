@@ -1,0 +1,13 @@
+*
+
+!*/
+!*.cc
+!*.h
+!*.java
+!*.py
+!*.md
+!*.sh
+!*.yml
+!BUILD
+!WORKSPACE
+!.gitignore
