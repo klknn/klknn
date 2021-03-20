@@ -18,7 +18,18 @@ jobs:
         javac -version
         python --version
 
-    - name: bazel test
-      uses: ngalaiko/bazel-action/1.2.1@master
+
+    - name: Mount bazel cache
+      uses: actions/cache@v1
       with:
-        args: test --test_output=all //klknn/cc:all //klknn/java:all //klknn/python:all
+        path: "/home/runner/.cache/bazel"
+        key: bazel
+
+    - name: Install bazelisk
+      run: |
+        curl -LO "https://github.com/bazelbuild/bazelisk/releases/download/v1.1.0/bazelisk-linux-amd64"
+        mv bazelisk-linux-amd64 bazel
+        chmod +x bazel
+
+    - name: bazel test
+      run: ./bazel test --test_output=all //klknn/cc:all //klknn/java:all //klknn/python:all
